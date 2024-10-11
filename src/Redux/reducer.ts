@@ -1,0 +1,46 @@
+import { AppState, Product, User } from "./types.ts";
+import { Action } from "./actions.ts";
+import { ActionTypes } from "./ActionTypes.ts";
+
+const initialState: AppState = {
+  products: [],
+  categories: [],
+  users: [],
+  cart: [],
+  favorites: [],
+  search: [],
+  user: null,
+};
+
+const rootReducer = (state = initialState, action: Action): AppState => {
+  switch (action.type) {
+    case ActionTypes.GET_ALL_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
+    case ActionTypes.CREATE_PRODUCT:
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+      };
+    case ActionTypes.DELETE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter((product) => product._id !== action.payload),
+      };
+    case ActionTypes.UPDATE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.map((product) =>
+          product._id === action.payload._id ? action.payload : product
+        ),
+      };
+    // Continúa con las demás acciones de la misma forma...
+
+    default:
+      return state;
+  }
+};
+
+export default rootReducer;
