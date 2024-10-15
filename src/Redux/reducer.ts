@@ -76,6 +76,7 @@ const rootReducer = (state = initialState, action: Action): AppState => {
           ...state,
           favorites: state.favorites.filter((product) => product._id !== action.payload._id),
         };
+        
     // Continúa con las demás acciones de la misma forma...
 
     default:

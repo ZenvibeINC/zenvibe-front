@@ -13,4 +13,5 @@ export enum ActionTypes {
     REMOVE_FROM_CART = "REMOVE_FROM_CART",
     ADD_FAVORITE = "ADD_FAVORITE",
     REMOVE_FAVORITE = "REMOVE_FAVORITE",
+    
   }
