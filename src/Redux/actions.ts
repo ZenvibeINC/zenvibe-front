@@ -233,6 +233,7 @@ export type Action =
 
   //** FAVORITE FUNCTIONS */
 
+  
   export const addFavorite = (product: Product) => {
     return async (dispatch: Dispatch<Action>) => {
       dispatch({
