@@ -6,8 +6,10 @@ export interface Product {
   }
   
   export interface User {
-    id: string;
     name: string;
+    email: string;
+    phone: number;
+    password: string;
     // otros campos del usuario
   }
   

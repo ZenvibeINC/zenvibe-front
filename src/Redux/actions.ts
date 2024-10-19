@@ -173,7 +173,7 @@ export type Action =
     return async (dispatch: Dispatch<Action>) => {
       try {
         const response = await axios.post<User>(
-          "http://localhost:3001/users/login",
+          "http://localhost:3001/users/register",
           user
         );
         dispatch({
@@ -233,7 +233,7 @@ export type Action =
 
   //** FAVORITE FUNCTIONS */
 
-  
+
   export const addFavorite = (product: Product) => {
     return async (dispatch: Dispatch<Action>) => {
       dispatch({
