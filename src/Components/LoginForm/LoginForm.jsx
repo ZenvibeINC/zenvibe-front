@@ -2,7 +2,7 @@ import Styles from "./LoginForm.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { register } from "../../Redux/actions"; // Importa la acción de registro
+import { register } from "..//..//Redux/actions.ts"; // Importa la acción de registro
 
 export default function LoginForm() {
   const [loginData, setLoginData] = useState({
