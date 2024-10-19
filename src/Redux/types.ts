@@ -11,6 +11,7 @@ export interface Product {
     // otros campos del usuario
   }
   
+  
   export interface AppState {
     products: Product[];
     categories: string[];

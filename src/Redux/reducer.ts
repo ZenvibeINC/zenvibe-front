@@ -36,6 +36,47 @@ const rootReducer = (state = initialState, action: Action): AppState => {
           product._id === action.payload._id ? action.payload : product
         ),
       };
+      case ActionTypes.GET_ALL_USERS:
+        return {
+          ...state,
+          users: action.payload,
+        };
+        case ActionTypes.REGISTER:
+          return {
+            ...state,
+            user: action.payload,
+          };
+      case ActionTypes.LOGIN:
+        return {
+          ...state,
+          user: action.payload,
+        };
+      case ActionTypes.LOGOUT:
+        return {
+          ...state,
+          user: null,
+        };
+      case ActionTypes.ADD_TO_CART:
+          return {
+            ...state,
+            cart: [...state.cart, action.payload],
+          }
+      case ActionTypes.REMOVE_FROM_CART:
+          return {
+            ...state,
+            cart: state.cart.filter((product) => product._id !== action.payload._id),
+          }
+      case ActionTypes.ADD_FAVORITE:
+        return {
+          ...state,
+          favorites: [...state.favorites, action.payload],
+        };
+      case ActionTypes.REMOVE_FAVORITE:
+        return {
+          ...state,
+          favorites: state.favorites.filter((product) => product._id !== action.payload._id),
+        };
+        
     // Continúa con las demás acciones de la misma forma...
 
     default:
