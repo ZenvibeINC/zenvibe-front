@@ -138,22 +138,22 @@ export type Action =
     };
   };
 
-  export const updateProduct = (product: Product) => {
-    return async (dispatch: Dispatch<Action>) => {
-      try {
-        const response = await axios.put<Product>(
-          `http://localhost:3001/products/${product._id}`,
-          product
-        );
-        dispatch({
-          type: ActionTypes.UPDATE_PRODUCT,
-          payload: response.data,
-        });
-      } catch (error) {
-        console.error("Error updating product:", error);
-      }
-    };
-  };
+  // export const updateProduct = (product: Product) => {
+  //   return async (dispatch: Dispatch<Action>) => {
+  //     try {
+  //       const response = await axios.put<Product>(
+  //         `http://localhost:3001/products/${product._id}`,
+  //         product
+  //       );
+  //       dispatch({
+  //         type: ActionTypes.UPDATE_PRODUCT,
+  //         payload: response.data,
+  //       });
+  //     } catch (error) {
+  //       console.error("Error updating product:", error);
+  //     }
+  //   };
+  // };
   
   export const getAllUsers = () => {
     return async (dispatch: Dispatch<Action>) => {
